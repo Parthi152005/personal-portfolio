@@ -1,20 +1,20 @@
 
 import { Card } from '@/components/ui/card';
-import { Code, Circle-Arrow-Up, Square-Code } from 'lucide-react';
+import { Code, TrendingUp, Database } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
       title: "UI/UX Design",
       description: "Crafting user-friendly, visually appealing interfaces using Figma and Adobe XD. Creating intuitive designs that enhance user experience and drive engagement.",
-      icon: <Square-Code className="w-12 h-12" />,
+      icon: <Database className="w-12 h-12" />,
       color: "tech-blue",
       features: ["User Research", "Wireframing", "Prototyping", "Design Systems", "Usability Testing"]
     },
     {
       title: "Data Analytics",
       description: "Building comprehensive data dashboards and uncovering actionable insights from complex datasets to drive informed business decisions.",
-      icon: <Circle-Arrow-Up className="w-12 h-12" />,
+      icon: <TrendingUp className="w-12 h-12" />,
       color: "tech-green",
       features: ["Data Visualization", "Statistical Analysis", "Dashboard Creation", "Business Intelligence", "Reporting"]
     },

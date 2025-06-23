@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Circle-Arrow-Up, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -65,7 +65,7 @@ const Contact = () => {
                 
                 <div className="flex items-center space-x-4">
                   <div className="p-3 bg-tech-green/20 rounded-lg">
-                    <Circle-Arrow-Up className="w-6 h-6 text-tech-green" />
+                    <Phone className="w-6 h-6 text-tech-green" />
                   </div>
                   <div>
                     <p className="text-gray-400 font-poppins">Phone</p>

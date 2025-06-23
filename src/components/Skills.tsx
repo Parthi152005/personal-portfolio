@@ -1,6 +1,6 @@
 
 import { Card } from '@/components/ui/card';
-import { Code, Circle-Arrow-Up, Square-Code } from 'lucide-react';
+import { Code, TrendingUp, Database } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -12,13 +12,13 @@ const Skills = () => {
     },
     {
       title: "Databases",
-      icon: <Square-Code className="w-8 h-8" />,
+      icon: <Database className="w-8 h-8" />,
       color: "tech-green",
       skills: ["MongoDB", "MySQL"]
     },
     {
       title: "Analytics Tools",
-      icon: <Circle-Arrow-Up className="w-8 h-8" />,
+      icon: <TrendingUp className="w-8 h-8" />,
       color: "purple-400",
       skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn"]
     },
@@ -30,13 +30,13 @@ const Skills = () => {
     },
     {
       title: "Visualization",
-      icon: <Circle-Arrow-Up className="w-8 h-8" />,
+      icon: <TrendingUp className="w-8 h-8" />,
       color: "tech-blue",
       skills: ["Tableau", "Power BI"]
     },
     {
       title: "Design Tools",
-      icon: <Square-Code className="w-8 h-8" />,
+      icon: <Database className="w-8 h-8" />,
       color: "tech-green",
       skills: ["Figma", "Adobe XD"]
     }

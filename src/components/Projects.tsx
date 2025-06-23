@@ -1,7 +1,7 @@
 
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Github, Circle-Arrow-Right } from 'lucide-react';
+import { Github, ArrowRight } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -103,7 +103,7 @@ const Projects = () => {
                     size="sm"
                     className={`flex-1 bg-${project.color}/90 hover:bg-${project.color} text-white transition-all duration-300`}
                   >
-                    <Circle-Arrow-Right className="w-4 h-4 mr-2" />
+                    <ArrowRight className="w-4 h-4 mr-2" />
                     Demo
                   </Button>
                 </div>
