@@ -9,7 +9,7 @@ import Navbar from "../components/Navbar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       <Navbar />
       <Hero />
       <About />

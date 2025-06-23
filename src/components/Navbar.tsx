@@ -24,23 +24,23 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200' : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-orbitron font-bold text-tech-blue">
+            <h1 className="text-xl font-medium text-gray-900">
               Parthiban S
             </h1>
           </div>
           
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-baseline space-x-8">
               {['Home', 'About', 'Skills', 'Services', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-gray-300 hover:text-tech-blue px-3 py-2 text-sm font-medium transition-colors duration-200 hover:scale-105"
+                  className="text-gray-600 hover:text-gray-900 text-sm font-normal transition-colors duration-200"
                 >
                   {item}
                 </button>
@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-tech-blue"
+              className="text-gray-600 hover:text-gray-900"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -60,13 +60,13 @@ const Navbar = () => {
       </div>
       
       {isMenuOpen && (
-        <div className="md:hidden bg-slate-900/95 backdrop-blur-md">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {['Home', 'About', 'Skills', 'Services', 'Projects', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-gray-300 hover:text-tech-blue block px-3 py-2 text-base font-medium w-full text-left"
+                className="text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-normal w-full text-left"
               >
                 {item}
               </button>

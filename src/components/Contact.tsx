@@ -16,7 +16,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     toast.success("Message sent successfully! I'll get back to you soon.");
     setFormData({ name: '', email: '', message: '' });
   };
@@ -29,16 +28,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6">
-            <span className="bg-gradient-to-r from-tech-green to-tech-blue bg-clip-text text-transparent">
-              Let's Connect
-            </span>
+          <h2 className="text-4xl font-light text-gray-900 mb-4">
+            Let's Connect
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-tech-green to-tech-blue mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 font-poppins max-w-3xl mx-auto">
+          <div className="w-16 h-px bg-gray-900 mx-auto mb-6"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to start a project or just want to chat? Drop me a message!
           </p>
         </div>
@@ -46,50 +43,50 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="p-8 bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <h3 className="text-2xl font-orbitron font-bold text-white mb-6">
+            <Card className="p-8 bg-white border-0 shadow-sm">
+              <h3 className="text-xl font-medium text-gray-900 mb-6">
                 Get in Touch
               </h3>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-tech-blue/20 rounded-lg">
-                    <Mail className="w-6 h-6 text-tech-blue" />
+                  <div className="p-3 bg-gray-100 rounded-lg">
+                    <Mail className="w-5 h-5 text-gray-700" />
                   </div>
                   <div>
-                    <p className="text-gray-400 font-poppins">Email</p>
-                    <a href="mailto:parthi15august@gmail.com" className="text-white hover:text-tech-blue transition-colors duration-200 font-poppins">
+                    <p className="text-gray-500 text-sm">Email</p>
+                    <a href="mailto:parthi15august@gmail.com" className="text-gray-900 hover:text-gray-600 transition-colors duration-200">
                       parthi15august@gmail.com
                     </a>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-tech-green/20 rounded-lg">
-                    <Phone className="w-6 h-6 text-tech-green" />
+                  <div className="p-3 bg-gray-100 rounded-lg">
+                    <Phone className="w-5 h-5 text-gray-700" />
                   </div>
                   <div>
-                    <p className="text-gray-400 font-poppins">Phone</p>
-                    <a href="tel:+917418484430" className="text-white hover:text-tech-green transition-colors duration-200 font-poppins">
+                    <p className="text-gray-500 text-sm">Phone</p>
+                    <a href="tel:+917418484430" className="text-gray-900 hover:text-gray-600 transition-colors duration-200">
                       +91 7418484430
                     </a>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-purple-400/20 rounded-lg">
-                    <Mail className="w-6 h-6 text-purple-400" />
+                  <div className="p-3 bg-gray-100 rounded-lg">
+                    <Mail className="w-5 h-5 text-gray-700" />
                   </div>
                   <div>
-                    <p className="text-gray-400 font-poppins">Location</p>
-                    <p className="text-white font-poppins">Cuddalore, Tamil Nadu, India</p>
+                    <p className="text-gray-500 text-sm">Location</p>
+                    <p className="text-gray-900">Cuddalore, Tamil Nadu, India</p>
                   </div>
                 </div>
               </div>
             </Card>
 
             {/* Social Links */}
-            <Card className="p-8 bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <h3 className="text-2xl font-orbitron font-bold text-white mb-6">
+            <Card className="p-8 bg-white border-0 shadow-sm">
+              <h3 className="text-xl font-medium text-gray-900 mb-6">
                 Follow Me
               </h3>
               <div className="flex space-x-4">
@@ -97,36 +94,36 @@ const Contact = () => {
                   href="https://linkedin.com/in/parthi-ban-0910152a5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-slate-700 hover:bg-tech-blue/20 rounded-lg transition-all duration-300 hover:scale-110"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200"
                 >
-                  <Linkedin className="w-6 h-6 text-tech-blue" />
+                  <Linkedin className="w-5 h-5 text-gray-700" />
                 </a>
                 <a 
                   href="https://github.com/Parthi152005"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-slate-700 hover:bg-tech-green/20 rounded-lg transition-all duration-300 hover:scale-110"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200"
                 >
-                  <Github className="w-6 h-6 text-tech-green" />
+                  <Github className="w-5 h-5 text-gray-700" />
                 </a>
                 <a 
                   href="mailto:parthi15august@gmail.com"
-                  className="p-4 bg-slate-700 hover:bg-purple-400/20 rounded-lg transition-all duration-300 hover:scale-110"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200"
                 >
-                  <Mail className="w-6 h-6 text-purple-400" />
+                  <Mail className="w-5 h-5 text-gray-700" />
                 </a>
               </div>
             </Card>
           </div>
 
           {/* Contact Form */}
-          <Card className="p-8 bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-            <h3 className="text-2xl font-orbitron font-bold text-white mb-6">
+          <Card className="p-8 bg-white border-0 shadow-sm">
+            <h3 className="text-xl font-medium text-gray-900 mb-6">
               Send a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2 font-poppins">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Name
                 </label>
                 <Input
@@ -136,13 +133,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-slate-700 border-slate-600 text-white placeholder-gray-400 focus:border-tech-blue focus:ring-tech-blue"
+                  className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-gray-900 focus:ring-gray-900 rounded-none"
                   placeholder="Your Name"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2 font-poppins">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email
                 </label>
                 <Input
@@ -152,13 +149,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-slate-700 border-slate-600 text-white placeholder-gray-400 focus:border-tech-blue focus:ring-tech-blue"
+                  className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-gray-900 focus:ring-gray-900 rounded-none"
                   placeholder="your.email@example.com"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2 font-poppins">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message
                 </label>
                 <Textarea
@@ -168,14 +165,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="bg-slate-700 border-slate-600 text-white placeholder-gray-400 focus:border-tech-blue focus:ring-tech-blue resize-none"
+                  className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-gray-900 focus:ring-gray-900 resize-none rounded-none"
                   placeholder="Tell me about your project or just say hello!"
                 />
               </div>
               
               <Button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-tech-blue to-purple-600 hover:from-tech-blue/80 hover:to-purple-600/80 text-white py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:scale-105 font-poppins"
+                className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-none text-base font-normal"
               >
                 Send Message
               </Button>
@@ -184,8 +181,8 @@ const Contact = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-slate-700 text-center">
-          <p className="text-gray-400 font-poppins">
+        <div className="mt-20 pt-8 border-t border-gray-200 text-center">
+          <p className="text-gray-500">
             © {new Date().getFullYear()} Parthiban S. Crafted with passion and precision.
           </p>
         </div>

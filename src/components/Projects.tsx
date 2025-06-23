@@ -8,72 +8,59 @@ const Projects = () => {
     {
       title: "Sales Forecasting using Machine Learning",
       description: "Advanced predictive analytics system that forecasts sales trends using machine learning algorithms for better inventory management and revenue planning.",
-      image: "/api/placeholder/400/250",
       tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-      category: "Machine Learning",
-      color: "tech-blue"
+      category: "Machine Learning"
     },
     {
       title: "AI-Based Fall Detection System",
       description: "Real-time fall detection system utilizing AI and IoT sensors to provide immediate safety alerts for elderly care, enhancing healthcare monitoring.",
-      image: "/api/placeholder/400/250",
       tech: ["TensorFlow", "IoT", "Python", "Computer Vision"],
-      category: "AI & IoT",
-      color: "tech-green"
+      category: "AI & IoT"
     },
     {
       title: "AI-Based Smart Integration Farming System",
       description: "Intelligent agricultural automation system leveraging machine learning and smart sensors to optimize farming operations and crop management.",
-      image: "/api/placeholder/400/250",
       tech: ["Machine Learning", "IoT Sensors", "Data Analytics", "Python"],
-      category: "Smart Agriculture",
-      color: "purple-400"
+      category: "Smart Agriculture"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6">
-            <span className="bg-gradient-to-r from-tech-blue via-purple-400 to-tech-green bg-clip-text text-transparent">
-              Featured Projects
-            </span>
+          <h2 className="text-4xl font-light text-gray-900 mb-4">
+            Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-tech-blue to-tech-green mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 font-poppins max-w-3xl mx-auto">
+          <div className="w-16 h-px bg-gray-900 mx-auto mb-6"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Showcasing innovative solutions that blend AI, data analytics, and creative problem-solving
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <Card 
               key={project.title}
-              className="overflow-hidden bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-500 hover:scale-105 hover:shadow-2xl group"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="overflow-hidden bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              {/* Project Image */}
-              <div className="relative h-48 bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br from-${project.color}/20 to-${project.color}/10 group-hover:from-${project.color}/30 group-hover:to-${project.color}/20 transition-all duration-500`}></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className={`text-6xl font-orbitron font-bold text-${project.color}/30 group-hover:text-${project.color}/50 transition-colors duration-500`}>
-                    {project.title.charAt(0)}
-                  </div>
-                </div>
-                
-                {/* Category Badge */}
-                <div className={`absolute top-4 left-4 px-3 py-1 bg-${project.color}/90 text-white text-sm font-medium rounded-full font-poppins`}>
-                  {project.category}
+              {/* Project Header */}
+              <div className="h-32 bg-gray-100 flex items-center justify-center">
+                <div className="text-3xl font-light text-gray-400">
+                  {project.title.charAt(0)}
                 </div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-orbitron font-bold text-white mb-3 group-hover:text-tech-blue transition-colors duration-300">
+                <div className="text-xs text-gray-500 mb-2 uppercase tracking-wide">
+                  {project.category}
+                </div>
+                
+                <h3 className="text-lg font-medium text-gray-900 mb-3">
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-300 font-poppins text-sm leading-relaxed mb-4">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
                 
@@ -82,7 +69,7 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span 
                       key={tech}
-                      className="px-3 py-1 bg-slate-700 text-gray-300 text-xs rounded-full font-poppins hover:bg-slate-600 transition-colors duration-200"
+                      className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded"
                     >
                       {tech}
                     </span>
@@ -94,14 +81,14 @@ const Projects = () => {
                   <Button 
                     variant="outline"
                     size="sm"
-                    className="flex-1 border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-white transition-all duration-300"
+                    className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 rounded-none"
                   >
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
                   <Button 
                     size="sm"
-                    className={`flex-1 bg-${project.color}/90 hover:bg-${project.color} text-white transition-all duration-300`}
+                    className="flex-1 bg-gray-900 hover:bg-gray-800 text-white rounded-none"
                   >
                     <ArrowRight className="w-4 h-4 mr-2" />
                     Demo
@@ -112,13 +99,13 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* My Working Process */}
+        {/* Working Process */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-orbitron font-bold text-white mb-4">
+            <h3 className="text-2xl font-light text-gray-900 mb-4">
               My Working Process
             </h3>
-            <div className="w-16 h-1 bg-gradient-to-r from-tech-blue to-purple-600 mx-auto"></div>
+            <div className="w-12 h-px bg-gray-900 mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -138,13 +125,13 @@ const Projects = () => {
                 title: "Grow Your Business",
                 description: "Implementing scalable solutions, monitoring performance, and ensuring continuous improvement."
               }
-            ].map((process, index) => (
-              <Card key={process.step} className="p-6 bg-slate-800/50 border-slate-700 text-center backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-r from-tech-blue to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-orbitron font-bold text-lg">{process.step}</span>
+            ].map((process) => (
+              <Card key={process.step} className="p-6 bg-white border-0 shadow-sm text-center">
+                <div className="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-medium">
+                  {process.step}
                 </div>
-                <h4 className="text-xl font-orbitron font-semibold text-white mb-3">{process.title}</h4>
-                <p className="text-gray-300 font-poppins">{process.description}</p>
+                <h4 className="text-lg font-medium text-gray-900 mb-3">{process.title}</h4>
+                <p className="text-gray-600">{process.description}</p>
               </Card>
             ))}
           </div>
