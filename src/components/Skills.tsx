@@ -6,52 +6,58 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Programming",
-      icon: <Code className="w-7 h-7" />,
+      icon: <Code className="w-8 h-8" />,
       skills: ["Python", "SQL", "Java", "R"],
-      color: "from-blue-50 to-indigo-50"
+      gradient: "from-blue-500 to-purple-600",
+      bgGradient: "from-blue-50 to-purple-50"
     },
     {
       title: "Databases",
-      icon: <Database className="w-7 h-7" />,
+      icon: <Database className="w-8 h-8" />,
       skills: ["MongoDB", "MySQL"],
-      color: "from-green-50 to-emerald-50"
+      gradient: "from-green-500 to-teal-600",
+      bgGradient: "from-green-50 to-teal-50"
     },
     {
       title: "Analytics Tools",
-      icon: <TrendingUp className="w-7 h-7" />,
+      icon: <TrendingUp className="w-8 h-8" />,
       skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn"],
-      color: "from-purple-50 to-violet-50"
+      gradient: "from-purple-500 to-pink-600",
+      bgGradient: "from-purple-50 to-pink-50"
     },
     {
       title: "ML Frameworks",
-      icon: <Brain className="w-7 h-7" />,
+      icon: <Brain className="w-8 h-8" />,
       skills: ["Scikit-learn", "TensorFlow", "Keras"],
-      color: "from-orange-50 to-red-50"
+      gradient: "from-orange-500 to-red-600",
+      bgGradient: "from-orange-50 to-red-50"
     },
     {
       title: "Visualization",
-      icon: <BarChart className="w-7 h-7" />,
+      icon: <BarChart className="w-8 h-8" />,
       skills: ["Tableau", "Power BI"],
-      color: "from-teal-50 to-cyan-50"
+      gradient: "from-cyan-500 to-blue-600",
+      bgGradient: "from-cyan-50 to-blue-50"
     },
     {
       title: "Design Tools",
-      icon: <Palette className="w-7 h-7" />,
+      icon: <Palette className="w-8 h-8" />,
       skills: ["Figma", "Adobe XD"],
-      color: "from-pink-50 to-rose-50"
+      gradient: "from-pink-500 to-rose-600",
+      bgGradient: "from-pink-50 to-rose-50"
     }
   ];
 
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 bg-gradient-to-b from-cyan-50 via-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-extralight text-gray-900 mb-6">
+          <h2 className="text-6xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
             Skills & Expertise
           </h2>
-          <div className="w-20 h-0.5 bg-gray-900 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A comprehensive toolkit for data-driven innovation
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-6 rounded-full"></div>
+          <p className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent max-w-3xl mx-auto">
+            A vibrant toolkit for innovation 🚀
           </p>
         </div>
 
@@ -59,23 +65,23 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={category.title}
-              className={`p-8 bg-gradient-to-br ${category.color} border-0 shadow-lg hover:shadow-xl transition-all duration-500 group hover:scale-105`}
+              className={`p-8 bg-gradient-to-br ${category.bgGradient} border-0 shadow-2xl hover:shadow-2xl transition-all duration-500 group hover:scale-110`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center mb-6">
-                <div className="p-3 bg-white/80 rounded-xl text-gray-700 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                <div className={`p-4 bg-gradient-to-r ${category.gradient} rounded-2xl text-white group-hover:scale-125 transition-transform duration-300 shadow-lg`}>
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-medium text-gray-900 ml-4 group-hover:text-gray-700 transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 ml-4 group-hover:scale-105 transition-transform">
                   {category.title}
                 </h3>
               </div>
               
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {category.skills.map((skill) => (
-                  <div key={skill} className="flex items-center text-gray-700 hover:text-gray-900 transition-colors">
-                    <div className="w-2 h-2 rounded-full bg-gray-400 mr-3 flex-shrink-0"></div>
-                    <span className="font-medium">{skill}</span>
+                  <div key={skill} className="flex items-center group/skill hover:scale-105 transition-transform">
+                    <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${category.gradient} mr-4 flex-shrink-0 group-hover/skill:scale-125 transition-transform`}></div>
+                    <span className="font-bold text-gray-800 group-hover/skill:text-gray-900">{skill}</span>
                   </div>
                 ))}
               </div>
@@ -85,21 +91,30 @@ const Skills = () => {
 
         {/* Additional Skills */}
         <div className="text-center">
-          <h3 className="text-3xl font-light text-gray-900 mb-12">
-            Technical Proficiencies
+          <h3 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-12">
+            Technical Superpowers ⚡
           </h3>
           <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
             {[
-              "Machine Learning", "Deep Learning", "Data Mining", "Statistical Analysis",
-              "Web Scraping", "API Development", "Cloud Computing", "Version Control",
-              "Agile Development", "Problem Solving", "Team Collaboration", "Project Management"
+              { name: "Machine Learning", gradient: "from-blue-500 to-purple-600" },
+              { name: "Deep Learning", gradient: "from-purple-500 to-pink-600" },
+              { name: "Data Mining", gradient: "from-green-500 to-teal-600" },
+              { name: "Statistical Analysis", gradient: "from-orange-500 to-red-600" },
+              { name: "Web Scraping", gradient: "from-cyan-500 to-blue-600" },
+              { name: "API Development", gradient: "from-indigo-500 to-purple-600" },
+              { name: "Cloud Computing", gradient: "from-pink-500 to-rose-600" },
+              { name: "Version Control", gradient: "from-teal-500 to-green-600" },
+              { name: "Agile Development", gradient: "from-yellow-500 to-orange-600" },
+              { name: "Problem Solving", gradient: "from-red-500 to-pink-600" },
+              { name: "Team Collaboration", gradient: "from-blue-500 to-cyan-600" },
+              { name: "Project Management", gradient: "from-violet-500 to-purple-600" }
             ].map((skill, index) => (
               <span 
-                key={skill}
-                className="px-6 py-3 bg-white text-gray-700 rounded-full hover:bg-gray-50 hover:scale-105 transition-all duration-300 cursor-default border border-gray-200 shadow-sm hover:shadow-md font-medium"
+                key={skill.name}
+                className={`px-8 py-4 bg-gradient-to-r ${skill.gradient} text-white rounded-2xl hover:scale-110 transition-all duration-300 cursor-default shadow-lg hover:shadow-xl font-bold text-lg`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                {skill}
+                {skill.name}
               </span>
             ))}
           </div>
