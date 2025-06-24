@@ -81,9 +81,7 @@ const Services = () => {
             if (element) element.scrollIntoView({
               behavior: 'smooth'
             });
-          }} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-16 py-6 rounded-2xl text-xl font-bold transition-all duration-300 hover:scale-110 shadow-2xl hover:shadow-purple-400 tracking-wide">
-              Start Creating Today ✨
-            </button>
+          }} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-16 py-6 rounded-2xl text-xl font-bold transition-all duration-300 hover:scale-110 shadow-2xl hover:shadow-purple-400 tracking-wide">Start Creating Today </button>
           </Card>
         </div>
       </div>
