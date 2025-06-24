@@ -1,9 +1,6 @@
-
 import { Card } from '@/components/ui/card';
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-blue-50">
+  return <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-blue-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -45,17 +42,22 @@ const About = () => {
                 Key Strengths
               </h3>
               <div className="grid grid-cols-2 gap-4">
-                {[
-                  { name: 'Problem Solving', color: 'from-blue-500 to-cyan-500' },
-                  { name: 'Team Leadership', color: 'from-purple-500 to-pink-500' },
-                  { name: 'Innovation', color: 'from-green-500 to-teal-500' },
-                  { name: 'Communication', color: 'from-orange-500 to-red-500' }
-                ].map((strength) => (
-                  <div key={strength.name} className="flex items-center p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
+                {[{
+                name: 'Problem Solving',
+                color: 'from-blue-500 to-cyan-500'
+              }, {
+                name: 'Team Leadership',
+                color: 'from-purple-500 to-pink-500'
+              }, {
+                name: 'Innovation',
+                color: 'from-green-500 to-teal-500'
+              }, {
+                name: 'Communication',
+                color: 'from-orange-500 to-red-500'
+              }].map(strength => <div key={strength.name} className="flex items-center p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
                     <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${strength.color} mr-3`}></div>
                     <span className="font-semibold text-gray-800">{strength.name}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </Card>
           </div>
@@ -74,9 +76,7 @@ const About = () => {
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
                     B.Tech in AI & Data Science
                   </h4>
-                  <p className="text-lg font-semibold text-blue-600 mb-1">
-                    C.K. College of Engineering and Data Science
-                  </p>
+                  <p className="text-lg font-semibold text-blue-600 mb-1">C.K. College of Engineering and technology</p>
                   <p className="text-gray-600 font-medium">2022 – 2026</p>
                 </div>
               </div>
@@ -88,28 +88,32 @@ const About = () => {
                 Core Competencies
               </h3>
               <div className="flex flex-wrap gap-3">
-                {[
-                  { name: 'Machine Learning', color: 'from-blue-500 to-purple-600' },
-                  { name: 'Data Analysis', color: 'from-green-500 to-teal-600' },
-                  { name: 'UI/UX Design', color: 'from-pink-500 to-rose-600' },
-                  { name: 'Python Development', color: 'from-orange-500 to-red-600' },
-                  { name: 'Database Management', color: 'from-cyan-500 to-blue-600' },
-                  { name: 'Project Management', color: 'from-purple-500 to-indigo-600' }
-                ].map((competency) => (
-                  <span 
-                    key={competency.name}
-                    className={`px-4 py-2 bg-gradient-to-r ${competency.color} text-white text-sm font-semibold rounded-full hover:scale-105 transition-transform cursor-default shadow-md`}
-                  >
+                {[{
+                name: 'Machine Learning',
+                color: 'from-blue-500 to-purple-600'
+              }, {
+                name: 'Data Analysis',
+                color: 'from-green-500 to-teal-600'
+              }, {
+                name: 'UI/UX Design',
+                color: 'from-pink-500 to-rose-600'
+              }, {
+                name: 'Python Development',
+                color: 'from-orange-500 to-red-600'
+              }, {
+                name: 'Database Management',
+                color: 'from-cyan-500 to-blue-600'
+              }, {
+                name: 'Project Management',
+                color: 'from-purple-500 to-indigo-600'
+              }].map(competency => <span key={competency.name} className={`px-4 py-2 bg-gradient-to-r ${competency.color} text-white text-sm font-semibold rounded-full hover:scale-105 transition-transform cursor-default shadow-md`}>
                     {competency.name}
-                  </span>
-                ))}
+                  </span>)}
               </div>
             </Card>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
