@@ -7,9 +7,7 @@ const About = () => {
             About Me
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Passionate AI & Data Science professional dedicated to creating innovative solutions
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Passionate AI & Data Science professional dedicated to creating innovative solutions.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
