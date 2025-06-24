@@ -74,7 +74,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-500 text-sm font-bold mb-2 uppercase tracking-wider">Location</p>
-                    <p className="text-xl font-bold text-gray-900">Cuddalore, Tamil Nadu 🇮🇳</p>
+                    <p className="text-xl font-bold text-gray-900">Cuddalore, Tamil Nadu,  India</p>
                   </div>
                 </div>
               </div>
