@@ -1,92 +1,92 @@
 
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Github, ArrowRight, Target, Shield, Sprout } from 'lucide-react';
+import { Github, ExternalLink, TrendingUp, Shield, Sprout, Database } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
-      title: "Sales Forecasting AI",
-      description: "Revolutionary machine learning system that predicts sales trends with stunning accuracy, featuring beautiful data visualizations and smart inventory optimization.",
-      tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+      title: "Sales Forecasting using Machine Learning",
+      description: "Analyzes historical sales data using machine learning algorithms to predict future trends. Optimizes inventory management and demand planning for better business efficiency. Enhances revenue forecasting and decision-making with data-driven insights.",
+      tech: ["Machine Learning", "Python", "Data Analytics", "Forecasting"],
       category: "Machine Learning",
-      icon: <Target className="w-10 h-10" />,
-      gradient: "from-blue-500 to-purple-600",
-      bgGradient: "from-blue-50 to-purple-50",
-      emoji: "🎯"
+      icon: <TrendingUp className="w-10 h-10" />,
+      gradient: "from-blue-600 to-indigo-700",
+      bgGradient: "from-blue-50 to-indigo-50",
+      emoji: "📈"
     },
     {
-      title: "Smart Fall Detection System",
-      description: "Life-saving AI-powered fall detection using computer vision and IoT sensors, with real-time alerts and beautiful monitoring dashboards for healthcare.",
-      tech: ["TensorFlow", "IoT", "Python", "Computer Vision"],
-      category: "AI & IoT",
+      title: "AI-based Fall Detection System for Elderly Safety",
+      description: "Uses AI and computer vision to detect falls in real-time with high accuracy. Integrates IoT sensors to monitor movement and identify sudden impacts. Sends instant alerts to caregivers for quick emergency response.",
+      tech: ["AI/Computer Vision", "IoT Sensors", "Real-time Processing", "Alert Systems"],
+      category: "AI & Healthcare",
       icon: <Shield className="w-10 h-10" />,
-      gradient: "from-green-500 to-teal-600",
-      bgGradient: "from-green-50 to-teal-50",
+      gradient: "from-indigo-600 to-slate-700",
+      bgGradient: "from-indigo-50 to-slate-50",
       emoji: "🛡️"
     },
     {
-      title: "Smart Farming Revolution",
-      description: "Next-generation agricultural automation with AI-powered crop monitoring, colorful data dashboards, and intelligent farming recommendations.",
-      tech: ["Machine Learning","IoT Sensors", "Data Analytics", "Python"],
+      title: "AI-Based Smart Integration Farming System",
+      description: "Implements machine learning to predict crop health and optimize irrigation. Solar-powered sensors monitor soil moisture, temperature, and environmental conditions. Enhances agricultural efficiency by automating decision-making and resource management.",
+      tech: ["Machine Learning", "IoT Sensors", "Solar Power", "Automation"],
       category: "Smart Agriculture",
       icon: <Sprout className="w-10 h-10" />,
-      gradient: "from-orange-500 to-red-600",
-      bgGradient: "from-orange-50 to-red-50",
+      gradient: "from-slate-600 to-blue-700",
+      bgGradient: "from-slate-50 to-blue-50",
       emoji: "🌱"
     }
   ];
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-green-50 via-teal-50 to-cyan-50">
+    <section id="projects" className="py-20 bg-gradient-to-b from-slate-50 to-indigo-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-6xl font-bold bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent mb-6">
-            Colorful Projects
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-700 bg-clip-text text-transparent mb-6">
+            Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-2xl font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent max-w-3xl mx-auto">
-            Innovative solutions painted with creativity and technology 🎨
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6 rounded-full"></div>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Innovative solutions leveraging AI, machine learning, and data analytics to solve real-world challenges
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-10 mb-24">
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {projects.map((project, index) => (
             <Card 
               key={project.title}
-              className={`overflow-hidden bg-gradient-to-br ${project.bgGradient} border-0 shadow-2xl hover:shadow-2xl transition-all duration-500 group hover:scale-110`}
+              className={`overflow-hidden bg-gradient-to-br ${project.bgGradient} border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group hover:scale-105`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Project Header */}
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
-                <div className="text-6xl mb-4">{project.emoji}</div>
+              <div className={`h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
+                <div className="text-4xl mb-2">{project.emoji}</div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white group-hover:scale-125 transition-transform duration-300">
+                  <div className="text-white group-hover:scale-110 transition-transform duration-300">
                     {project.icon}
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/10"></div>
               </div>
 
-              <div className="p-8">
-                <div className={`text-xs font-bold mb-4 uppercase tracking-wider bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}>
+              <div className="p-6">
+                <div className={`text-xs font-semibold mb-3 uppercase tracking-wider bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}>
                   {project.category}
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:scale-105 transition-transform">
+                <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:scale-105 transition-transform leading-tight">
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-700 text-base leading-relaxed mb-6 font-medium">
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">
                   {project.description}
                 </p>
                 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-3 mb-8">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech) => (
                     <span 
                       key={tech}
-                      className={`px-4 py-2 bg-gradient-to-r ${project.gradient} text-white text-sm rounded-xl font-bold shadow-lg hover:scale-110 transition-transform`}
+                      className={`px-3 py-1 bg-gradient-to-r ${project.gradient} text-white text-xs rounded-lg font-medium shadow-sm hover:scale-105 transition-transform`}
                     >
                       {tech}
                     </span>
@@ -94,18 +94,20 @@ const Projects = () => {
                 </div>
                 
                 {/* Action Buttons */}
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <Button 
-                    className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white rounded-xl hover:scale-105 transition-all duration-300 font-bold shadow-lg"
+                    size="sm"
+                    className="flex-1 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-lg hover:scale-105 transition-all duration-300 font-medium shadow-md text-xs"
                   >
-                    <Github className="w-5 h-5 mr-2" />
+                    <Github className="w-4 h-4 mr-1" />
                     Code
                   </Button>
                   <Button 
-                    className={`flex-1 bg-gradient-to-r ${project.gradient} hover:opacity-90 text-white rounded-xl hover:scale-105 transition-all duration-300 font-bold shadow-lg`}
+                    size="sm"
+                    className={`flex-1 bg-gradient-to-r ${project.gradient} hover:opacity-90 text-white rounded-lg hover:scale-105 transition-all duration-300 font-medium shadow-md text-xs`}
                   >
-                    <ArrowRight className="w-5 h-5 mr-2" />
-                    Demo
+                    <ExternalLink className="w-4 h-4 mr-1" />
+                    View
                   </Button>
                 </div>
               </div>
@@ -113,56 +115,46 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Working Process */}
-        <div className="mb-16">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
-              My Colorful Process 🌈
-            </h3>
-            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-10">
-            {[
-              {
-                step: "01",
-                title: "Strategic Planning",
-                description: "Deep analysis and creative brainstorming to understand your vision and create the perfect colorful solution.",
-                gradient: "from-blue-500 to-purple-600",
-                bgGradient: "from-blue-50 to-purple-50",
-                emoji: "🎯"
-              },
-              {
-                step: "02", 
-                title: "Creative Design",
-                description: "Crafting beautiful, colorful interfaces and user experiences that captivate and engage your audience.",
-                gradient: "from-pink-500 to-orange-600",
-                bgGradient: "from-pink-50 to-orange-50",
-                emoji: "🎨"
-              },
-              {
-                step: "03",
-                title: "Launch & Growth",
-                description: "Deploying your vibrant solution and continuously optimizing for maximum impact and user satisfaction.",
-                gradient: "from-green-500 to-teal-600",
-                bgGradient: "from-green-50 to-teal-50",
-                emoji: "🚀"
-              }
-            ].map((process, index) => (
-              <Card 
-                key={process.step} 
-                className={`p-10 bg-gradient-to-br ${process.bgGradient} border-0 shadow-2xl hover:shadow-2xl transition-all duration-500 text-center group hover:scale-110`}
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="text-4xl mb-6">{process.emoji}</div>
-                <div className={`w-20 h-20 bg-gradient-to-r ${process.gradient} text-white rounded-3xl flex items-center justify-center mx-auto mb-8 text-2xl font-bold group-hover:scale-125 transition-transform duration-300 shadow-xl`}>
-                  {process.step}
-                </div>
-                <h4 className="text-2xl font-bold text-gray-900 mb-6 group-hover:scale-105 transition-transform">{process.title}</h4>
-                <p className="text-gray-700 leading-relaxed font-medium text-lg">{process.description}</p>
-              </Card>
-            ))}
-          </div>
+        {/* Upcoming Projects Section */}
+        <div className="text-center">
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-8">
+            Upcoming Projects
+          </h3>
+          
+          <Card className="p-8 bg-gradient-to-br from-white via-indigo-50 to-blue-50 border-2 border-indigo-100 shadow-xl hover:shadow-2xl transition-all duration-500 max-w-4xl mx-auto hover:scale-105">
+            <div className="flex items-center justify-center mb-6">
+              <div className="text-4xl mr-4">🚀</div>
+              <Database className="w-12 h-12 text-indigo-600" />
+            </div>
+            
+            <h4 className="text-2xl font-bold text-slate-800 mb-4">
+              Unified Data Analytics Platform
+            </h4>
+            
+            <p className="text-lg text-slate-600 mb-6 leading-relaxed max-w-3xl mx-auto">
+              An integrated application combining the power of <span className="font-semibold text-indigo-600">Python</span>, 
+              <span className="font-semibold text-blue-600"> Power BI</span>, 
+              <span className="font-semibold text-indigo-600"> Tableau</span>, 
+              <span className="font-semibold text-slate-600"> R</span>, and 
+              <span className="font-semibold text-blue-600"> SQL</span> in a single, seamless platform for comprehensive data analytics and visualization.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              {["Python", "Power BI", "Tableau", "R Programming", "SQL", "Data Visualization", "Analytics"].map((tech) => (
+                <span 
+                  key={tech}
+                  className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-sm rounded-full font-medium shadow-lg hover:scale-105 transition-transform"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-100 to-blue-100 text-indigo-700 rounded-full font-semibold text-sm">
+              <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3 animate-pulse"></div>
+              Coming Soon
+            </div>
+          </Card>
         </div>
       </div>
     </section>
