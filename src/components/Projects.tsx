@@ -13,17 +13,19 @@ const Projects = () => {
       icon: <TrendingUp className="w-10 h-10" />,
       gradient: "from-blue-600 to-indigo-700",
       bgGradient: "from-blue-50 to-indigo-50",
-      emoji: "📈"
+      emoji: "📈",
+      githubUrl: "https://github.com/parthiban-s/sales-forecasting-ml"
     },
     {
       title: "AI-based Fall Detection System for Elderly Safety",
       description: "Uses AI and computer vision to detect falls in real-time with high accuracy. Integrates IoT sensors to monitor movement and identify sudden impacts. Sends instant alerts to caregivers for quick emergency response.",
       tech: ["AI/Computer Vision", "IoT Sensors", "Real-time Processing", "Alert Systems"],
-      category: "AI & Healthcare",
+      category: "AI & ML",
       icon: <Shield className="w-10 h-10" />,
       gradient: "from-indigo-600 to-slate-700",
       bgGradient: "from-indigo-50 to-slate-50",
-      emoji: "🛡️"
+      emoji: "🛡️",
+      githubUrl: "https://github.com/parthiban-s/ai-fall-detection"
     },
     {
       title: "AI-Based Smart Integration Farming System",
@@ -33,9 +35,19 @@ const Projects = () => {
       icon: <Sprout className="w-10 h-10" />,
       gradient: "from-slate-600 to-blue-700",
       bgGradient: "from-slate-50 to-blue-50",
-      emoji: "🌱"
+      emoji: "🌱",
+      githubUrl: "https://github.com/parthiban-s/smart-farming-ai"
     }
   ];
+
+  const handleGithubClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleViewClick = (title: string) => {
+    // You can customize this to redirect to specific project demos
+    console.log(`Viewing project: ${title}`);
+  };
 
   return (
     <section id="projects" className="py-20 bg-gradient-to-b from-slate-50 to-indigo-50">
@@ -97,6 +109,7 @@ const Projects = () => {
                 <div className="flex gap-3">
                   <Button 
                     size="sm"
+                    onClick={() => handleGithubClick(project.githubUrl)}
                     className="flex-1 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-lg hover:scale-105 transition-all duration-300 font-medium shadow-md text-xs"
                   >
                     <Github className="w-4 h-4 mr-1" />
@@ -104,6 +117,7 @@ const Projects = () => {
                   </Button>
                   <Button 
                     size="sm"
+                    onClick={() => handleViewClick(project.title)}
                     className={`flex-1 bg-gradient-to-r ${project.gradient} hover:opacity-90 text-white rounded-lg hover:scale-105 transition-all duration-300 font-medium shadow-md text-xs`}
                   >
                     <ExternalLink className="w-4 h-4 mr-1" />
