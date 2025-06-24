@@ -3,67 +3,78 @@ import { Card } from '@/components/ui/card';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-orange-50 via-pink-50 to-purple-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-6xl font-bold bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-6">
+    <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-blue-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-purple-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-2xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent max-w-3xl mx-auto">
-            Passionate about bridging creativity and technology 🎨
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Passionate AI & Data Science professional dedicated to creating innovative solutions
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Bio Section */}
-          <div className="space-y-10">
-            <Card className="p-10 bg-gradient-to-br from-white via-blue-50 to-purple-50 border-0 shadow-2xl hover:shadow-blue-300 transition-all duration-500 group hover:scale-105">
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8 group-hover:scale-105 transition-transform">
-                My Colorful Journey 🌈
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Professional Summary */}
+          <div className="space-y-8">
+            <Card className="p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-blue-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3"></div>
+                Professional Journey
               </h3>
-              <div className="space-y-6 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p className="text-lg">
-                  I'm an <span className="font-bold text-purple-600">enthusiastic professional</span> with a strong foundation in 
-                  <span className="font-bold text-blue-600"> Artificial Intelligence</span>, 
-                  <span className="font-bold text-pink-600"> Data Analytics</span>, and 
-                  <span className="font-bold text-cyan-600"> UI/UX Design</span>.
+                  I'm a dedicated <span className="font-semibold text-blue-600">AI & Data Science</span> professional 
+                  with expertise in <span className="font-semibold text-indigo-600">Machine Learning</span>, 
+                  <span className="font-semibold text-purple-600"> Data Analytics</span>, and 
+                  <span className="font-semibold text-cyan-600"> UI/UX Design</span>.
                 </p>
                 <p className="text-lg">
-                  My passion lies in creating <span className="font-bold text-orange-600">vibrant digital experiences</span> that 
-                  combine <span className="font-bold text-green-600">technical excellence</span> with 
-                  <span className="font-bold text-purple-600">creative innovation</span>.
+                  My focus is on delivering <span className="font-semibold text-green-600">data-driven solutions</span> that 
+                  create measurable business impact through <span className="font-semibold text-orange-600">innovative technology</span> 
+                  and <span className="font-semibold text-pink-600">user-centered design</span>.
                 </p>
               </div>
             </Card>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-8">
-              <Card className="p-8 bg-gradient-to-br from-green-400 to-blue-500 border-0 shadow-2xl hover:shadow-green-300 transition-all duration-500 text-center group hover:scale-110">
-                <div className="text-5xl font-bold text-white mb-4 group-hover:scale-110 transition-transform">15+</div>
-                <div className="text-white font-bold text-lg">Colorful Projects</div>
-              </Card>
-              <Card className="p-8 bg-gradient-to-br from-purple-500 to-pink-500 border-0 shadow-2xl hover:shadow-purple-300 transition-all duration-500 text-center group hover:scale-110">
-                <div className="text-5xl font-bold text-white mb-4 group-hover:scale-110 transition-transform">3+</div>
-                <div className="text-white font-bold text-lg">Years Creating</div>
-              </Card>
-            </div>
+            {/* Key Strengths */}
+            <Card className="p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-indigo-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mr-3"></div>
+                Key Strengths
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { name: 'Problem Solving', color: 'from-blue-500 to-cyan-500' },
+                  { name: 'Team Leadership', color: 'from-purple-500 to-pink-500' },
+                  { name: 'Innovation', color: 'from-green-500 to-teal-500' },
+                  { name: 'Communication', color: 'from-orange-500 to-red-500' }
+                ].map((strength) => (
+                  <div key={strength.name} className="flex items-center p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
+                    <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${strength.color} mr-3`}></div>
+                    <span className="font-semibold text-gray-800">{strength.name}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
           </div>
 
-          {/* Education & Interests */}
-          <div className="space-y-10">
-            <Card className="p-10 bg-gradient-to-br from-white via-cyan-50 to-blue-50 border-0 shadow-2xl hover:shadow-cyan-300 transition-all duration-500 group hover:scale-105">
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-8 group-hover:scale-105 transition-transform">
-                Education 🎓
+          {/* Education & Professional Development */}
+          <div className="space-y-8">
+            <Card className="p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-green-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-3"></div>
+                Education
               </h3>
               <div className="relative">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-blue-600 rounded-full"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-400 to-teal-600"></div>
                 <div className="pl-8">
-                  <div className="absolute left-0 top-2 w-4 h-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transform -translate-x-1.5"></div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                  <div className="absolute left-0 top-2 w-3 h-3 bg-gradient-to-r from-green-500 to-teal-500 rounded-full transform -translate-x-1.5"></div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">
                     B.Tech in AI & Data Science
                   </h4>
-                  <p className="text-lg font-semibold text-purple-600 mb-2">
+                  <p className="text-lg font-semibold text-blue-600 mb-1">
                     C.K. College of Engineering and Data Science
                   </p>
                   <p className="text-gray-600 font-medium">2022 – 2026</p>
@@ -71,24 +82,25 @@ const About = () => {
               </div>
             </Card>
 
-            <Card className="p-10 bg-gradient-to-br from-white via-pink-50 to-orange-50 border-0 shadow-2xl hover:shadow-pink-300 transition-all duration-500 group hover:scale-105">
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent mb-8 group-hover:scale-105 transition-transform">
-                Colorful Interests 🎨
+            <Card className="p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-purple-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3"></div>
+                Core Competencies
               </h3>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3">
                 {[
                   { name: 'Machine Learning', color: 'from-blue-500 to-purple-600' },
-                  { name: 'Data Visualization', color: 'from-green-500 to-teal-600' },
-                  { name: 'UI/UX Research', color: 'from-pink-500 to-rose-600' },
-                  { name: 'IoT Solutions', color: 'from-orange-500 to-red-600' },
-                  { name: 'Web Development', color: 'from-cyan-500 to-blue-600' },
-                  { name: 'Design Systems', color: 'from-purple-500 to-indigo-600' }
-                ].map((interest) => (
+                  { name: 'Data Analysis', color: 'from-green-500 to-teal-600' },
+                  { name: 'UI/UX Design', color: 'from-pink-500 to-rose-600' },
+                  { name: 'Python Development', color: 'from-orange-500 to-red-600' },
+                  { name: 'Database Management', color: 'from-cyan-500 to-blue-600' },
+                  { name: 'Project Management', color: 'from-purple-500 to-indigo-600' }
+                ].map((competency) => (
                   <span 
-                    key={interest.name}
-                    className={`px-6 py-3 bg-gradient-to-r ${interest.color} text-white text-sm font-bold rounded-2xl hover:scale-110 transition-all duration-300 cursor-default shadow-lg`}
+                    key={competency.name}
+                    className={`px-4 py-2 bg-gradient-to-r ${competency.color} text-white text-sm font-semibold rounded-full hover:scale-105 transition-transform cursor-default shadow-md`}
                   >
-                    {interest.name}
+                    {competency.name}
                   </span>
                 ))}
               </div>
