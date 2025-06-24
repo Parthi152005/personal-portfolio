@@ -69,11 +69,7 @@ const Hero = () => {
                   <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
                 </div>
                 
-                <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">AI & DS Student | Data Whisperer | Design Thinker Blending Data + Design to build human-centered tech UI/UX Designer | Data Analyst in progress | AI Explorer
-Creating impact through innovation & FOSS Devloper.
-
-
-Transforming complex data into actionable insights and creating intuitive user experiences that drive business growth. Passionate about leveraging AI technologies to solve real-world problems.</p>
+                <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">AI & DS Student | Data Whisperer | Design Thinker Blending Data + Design to build human-centered tech UI/UX Designer | Data Analyst in progress | AI Explorer Creating impact through innovation & FOSS Devloper..</p>
               </div>
             </div>
 
