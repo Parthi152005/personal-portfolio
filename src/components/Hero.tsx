@@ -1,3 +1,4 @@
+
 import { ArrowDown, Mail, Github, Linkedin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 const Hero = () => {
@@ -102,7 +103,7 @@ const Hero = () => {
             {/* Key Skills Preview */}
             <div className="pt-4">
               <div className="flex flex-wrap gap-3">
-                {['Python', 'React', 'Figma', 'SQL', 'Machine Learning', 'UI/UX'].map(skill => <span key={skill} className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors">
+                {['Python', 'React', 'Figma', 'SQL', 'AI & ML', 'UI/UX'].map(skill => <span key={skill} className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors">
                     {skill}
                   </span>)}
               </div>
