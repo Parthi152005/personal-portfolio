@@ -1,7 +1,7 @@
 
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Github, ExternalLink, TrendingUp, Shield, Sprout, Database, Brain } from 'lucide-react';
+import { Github, TrendingUp, Shield, Sprout, Database, Brain } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -13,8 +13,7 @@ const Projects = () => {
       icon: <TrendingUp className="w-10 h-10" />,
       gradient: "from-blue-600 to-indigo-700",
       bgGradient: "from-blue-50 to-indigo-50",
-      emoji: "📈",
-      githubUrl: "https://github.com/parthiban-s/sales-forecasting-ml"
+      emoji: "📈"
     },
     {
       title: "AI-based Fall Detection System for Elderly Safety",
@@ -24,8 +23,7 @@ const Projects = () => {
       icon: <Shield className="w-10 h-10" />,
       gradient: "from-indigo-600 to-slate-700",
       bgGradient: "from-indigo-50 to-slate-50",
-      emoji: "🛡️",
-      githubUrl: "https://github.com/parthiban-s/ai-fall-detection"
+      emoji: "🛡️"
     },
     {
       title: "AI-Based Smart Integration Farming System",
@@ -35,8 +33,7 @@ const Projects = () => {
       icon: <Sprout className="w-10 h-10" />,
       gradient: "from-slate-600 to-blue-700",
       bgGradient: "from-slate-50 to-blue-50",
-      emoji: "🌱",
-      githubUrl: "https://github.com/parthiban-s/smart-farming-ai"
+      emoji: "🌱"
     },
     {
       title: "Deep Research AI",
@@ -46,17 +43,12 @@ const Projects = () => {
       icon: <Brain className="w-10 h-10" />,
       gradient: "from-purple-600 to-pink-700",
       bgGradient: "from-purple-50 to-pink-50",
-      emoji: "🧠",
-      githubUrl: "https://github.com/parthiban-s/deep-research-ai"
+      emoji: "🧠"
     }
   ];
 
-  const handleGithubClick = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  const handleViewClick = (title: string) => {
-    console.log(`Viewing project: ${title}`);
+  const handleGithubProfileClick = () => {
+    window.open('https://github.com/parthiban-s', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -114,29 +106,38 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <Button 
-                    size="sm"
-                    onClick={() => handleGithubClick(project.githubUrl)}
-                    className="flex-1 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-lg hover:scale-105 transition-all duration-300 font-medium shadow-md text-xs"
-                  >
-                    <Github className="w-4 h-4 mr-1" />
-                    Code
-                  </Button>
-                  <Button 
-                    size="sm"
-                    onClick={() => handleViewClick(project.title)}
-                    className={`flex-1 bg-gradient-to-r ${project.gradient} hover:opacity-90 text-white rounded-lg hover:scale-105 transition-all duration-300 font-medium shadow-md text-xs`}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-1" />
-                    View
-                  </Button>
-                </div>
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* GitHub Profile Section */}
+        <div className="text-center mb-16">
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-slate-600 to-blue-600 bg-clip-text text-transparent mb-8">
+            Explore My Work
+          </h3>
+          
+          <Card className="p-8 bg-gradient-to-br from-white via-slate-50 to-blue-50 border-2 border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-500 max-w-2xl mx-auto hover:scale-105">
+            <div className="flex items-center justify-center mb-6">
+              <Github className="w-16 h-16 text-slate-700" />
+            </div>
+            
+            <h4 className="text-2xl font-bold text-slate-800 mb-4">
+              GitHub Profile
+            </h4>
+            
+            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              Discover more of my projects, contributions, and open-source work on GitHub
+            </p>
+            
+            <Button 
+              onClick={handleGithubProfileClick}
+              className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              <Github className="w-5 h-5 mr-2" />
+              Visit GitHub Profile
+            </Button>
+          </Card>
         </div>
 
         {/* Upcoming Projects Section */}
