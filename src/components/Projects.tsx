@@ -1,7 +1,7 @@
 
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Github, ExternalLink, TrendingUp, Shield, Sprout, Database } from 'lucide-react';
+import { Github, ExternalLink, TrendingUp, Shield, Sprout, Database, Brain } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -37,6 +37,17 @@ const Projects = () => {
       bgGradient: "from-slate-50 to-blue-50",
       emoji: "🌱",
       githubUrl: "https://github.com/parthiban-s/smart-farming-ai"
+    },
+    {
+      title: "Deep Research AI",
+      description: "Advanced AI research and development project focusing on cutting-edge machine learning implementations. Explores innovative solutions for complex data challenges and develops next-generation AI algorithms for various applications.",
+      tech: ["Deep Learning", "Research", "AI Algorithms", "Data Science"],
+      category: "AI Research",
+      icon: <Brain className="w-10 h-10" />,
+      gradient: "from-purple-600 to-pink-700",
+      bgGradient: "from-purple-50 to-pink-50",
+      emoji: "🧠",
+      githubUrl: "https://github.com/parthiban-s/deep-research-ai"
     }
   ];
 
@@ -45,7 +56,6 @@ const Projects = () => {
   };
 
   const handleViewClick = (title: string) => {
-    // You can customize this to redirect to specific project demos
     console.log(`Viewing project: ${title}`);
   };
 
@@ -62,7 +72,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
           {projects.map((project, index) => (
             <Card 
               key={project.title}

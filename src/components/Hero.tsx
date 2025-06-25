@@ -1,6 +1,6 @@
-
 import { ArrowDown, Mail, Github, Linkedin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -10,7 +10,71 @@ const Hero = () => {
       });
     }
   };
-  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+
+  const downloadPortfolio = () => {
+    // Create a comprehensive portfolio content
+    const portfolioContent = `
+PARTHIBAN S
+AI & Data Analyst | UI/UX Designer
+Email: parthi15august@gmail.com
+Phone: +91 7418484430
+Location: Cuddalore, Tamil Nadu, India
+LinkedIn: https://linkedin.com/in/parthi-ban-0910152a5
+GitHub: https://github.com/Parthi152005
+
+ABOUT
+AI & DS Student | Data Whisperer | Design Thinker 
+Blending Data + Design to build human-centered tech
+UI/UX Designer | Data Analyst in progress | AI Explorer
+Creating impact through innovation & FOSS Developer
+
+SKILLS
+• Python
+• Figma
+• SQL
+• AI & ML
+• UI/UX Design
+
+PROJECTS
+1. Sales Forecasting using Machine Learning
+   - Analyzes historical sales data using ML algorithms
+   - Optimizes inventory management and demand planning
+   - Enhances revenue forecasting with data-driven insights
+
+2. AI-based Fall Detection System for Elderly Safety
+   - Uses AI and computer vision for real-time fall detection
+   - Integrates IoT sensors to monitor movement
+   - Sends instant alerts to caregivers
+
+3. AI-Based Smart Integration Farming System
+   - Implements ML to predict crop health and optimize irrigation
+   - Solar-powered sensors monitor environmental conditions
+   - Enhances agricultural efficiency through automation
+
+4. Deep Research AI
+   - Advanced AI research and development project
+   - Cutting-edge machine learning implementations
+   - Innovative solutions for complex data challenges
+
+UPCOMING PROJECTS
+Unified Data Analytics Platform
+- Integrated application combining Python, Power BI, Tableau, R, and SQL
+- Comprehensive data analytics and visualization platform
+    `;
+
+    const blob = new Blob([portfolioContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Parthiban_S_Portfolio.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Modern geometric background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-full mix-blend-multiply filter blur-2xl animate-float"></div>
@@ -77,7 +141,7 @@ const Hero = () => {
             {/* Action Buttons */}
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={() => scrollToSection('about')} className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl text-base font-semibold tracking-wide hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-300">
+                <Button onClick={downloadPortfolio} className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl text-base font-semibold tracking-wide hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-300">
                   <Download className="mr-2 w-5 h-5" />
                   Download Resume
                 </Button>
@@ -103,7 +167,7 @@ const Hero = () => {
             {/* Key Skills Preview */}
             <div className="pt-4">
               <div className="flex flex-wrap gap-3">
-                {['Python', 'React', 'Figma', 'SQL', 'AI & ML', 'UI/UX'].map(skill => <span key={skill} className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors">
+                {['Python', 'Figma', 'SQL', 'AI & ML', 'UI/UX'].map(skill => <span key={skill} className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors">
                     {skill}
                   </span>)}
               </div>
@@ -121,6 +185,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

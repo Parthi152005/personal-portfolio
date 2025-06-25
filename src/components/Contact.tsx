@@ -5,28 +5,59 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("🎉 Message sent successfully! I'll get back to you with colorful ideas soon!");
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setIsLoading(true);
+
+    try {
+      const result = await emailjs.send(
+        'service_82ivj39',
+        'template_09susqt',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Parthiban S',
+        },
+        'Ob47unQS20B-o7Gu8'
+      );
+
+      if (result.status === 200) {
+        toast.success("✅ Message sent successfully! I'll get back to you soon!");
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast.error("❌ Failed to send message. Please try again or contact directly via email.");
+    } finally {
+      setIsLoading(false);
+    }
   };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-  return <section id="contact" className="py-24 bg-gradient-to-b from-purple-50 via-pink-50 to-orange-50">
+
+  return (
+    <section id="contact" className="py-24 bg-gradient-to-b from-purple-50 via-pink-50 to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-6xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent mb-6">
@@ -100,33 +131,64 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="p-10 bg-gradient-to-br from-white via-cyan-50 to-blue-50 border-0 shadow-2xl hover:shadow-cyan-300 transition-all duration-500 hover:scale-105">
             <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-8">
-              Send a Colorful Message ✨
+              Send Message ✉️
             </h3>
             <form onSubmit={handleSubmit} className="space-y-8">
               <div>
                 <label htmlFor="name" className="block text-lg font-bold text-gray-700 mb-4">
                   Your Name 👋
                 </label>
-                <Input id="name" name="name" type="text" value={formData.name} onChange={handleChange} required className="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 text-gray-900 placeholder-gray-500 focus:bg-white focus:ring-4 focus:ring-purple-300 focus:border-purple-400 rounded-2xl h-14 transition-all duration-300 text-lg font-medium" placeholder="What's your awesome name?" />
+                <Input 
+                  id="name" 
+                  name="name" 
+                  type="text" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                  required 
+                  className="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 text-gray-900 placeholder-gray-500 focus:bg-white focus:ring-4 focus:ring-purple-300 focus:border-purple-400 rounded-2xl h-14 transition-all duration-300 text-lg font-medium" 
+                  placeholder="What's your awesome name?" 
+                />
               </div>
               
               <div>
                 <label htmlFor="email" className="block text-lg font-bold text-gray-700 mb-4">
                   Email Address 📧
                 </label>
-                <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required className="bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 text-gray-900 placeholder-gray-500 focus:bg-white focus:ring-4 focus:ring-blue-300 focus:border-blue-400 rounded-2xl h-14 transition-all duration-300 text-lg font-medium" placeholder="your.awesome@email.com" />
+                <Input 
+                  id="email" 
+                  name="email" 
+                  type="email" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                  required 
+                  className="bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 text-gray-900 placeholder-gray-500 focus:bg-white focus:ring-4 focus:ring-blue-300 focus:border-blue-400 rounded-2xl h-14 transition-all duration-300 text-lg font-medium" 
+                  placeholder="your.awesome@email.com" 
+                />
               </div>
               
               <div>
                 <label htmlFor="message" className="block text-lg font-bold text-gray-700 mb-4">
-                  Your Colorful Message 💌
+                  Your Message 💌
                 </label>
-                <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={6} className="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 text-gray-900 placeholder-gray-500 focus:bg-white focus:ring-4 focus:ring-green-300 focus:border-green-400 resize-none rounded-2xl transition-all duration-300 text-lg font-medium" placeholder="Tell me about your amazing project ideas or just say a colorful hello! 🌈" />
+                <Textarea 
+                  id="message" 
+                  name="message" 
+                  value={formData.message} 
+                  onChange={handleChange} 
+                  required 
+                  rows={6} 
+                  className="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 text-gray-900 placeholder-gray-500 focus:bg-white focus:ring-4 focus:ring-green-300 focus:border-green-400 resize-none rounded-2xl transition-all duration-300 text-lg font-medium" 
+                  placeholder="Tell me about your amazing project ideas or just say hello! 🌈" 
+                />
               </div>
               
-              <Button type="submit" className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:from-purple-700 hover:via-pink-700 hover:to-orange-700 text-white py-6 rounded-2xl text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-400">
+              <Button 
+                type="submit" 
+                disabled={isLoading}
+                className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:from-purple-700 hover:via-pink-700 hover:to-orange-700 text-white py-6 rounded-2xl text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-400 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
                 <Send className="w-6 h-6 mr-3" />
-                Send My Colorful Message 🚀
+                {isLoading ? 'Sending...' : 'Send Message 🚀'}
               </Button>
             </form>
           </Card>
@@ -139,6 +201,8 @@ const Contact = () => {
           </p>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;
