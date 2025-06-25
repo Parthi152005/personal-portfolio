@@ -1,3 +1,4 @@
+
 import { ArrowDown, Mail, Github, Linkedin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -12,61 +13,73 @@ const Hero = () => {
   };
 
   const downloadPortfolio = () => {
-    // Create a comprehensive portfolio content
-    const portfolioContent = `
-PARTHIBAN S
-AI & Data Analyst | UI/UX Designer
-Email: parthi15august@gmail.com
-Phone: +91 7418484430
-Location: Cuddalore, Tamil Nadu, India
-LinkedIn: https://linkedin.com/in/parthi-ban-0910152a5
-GitHub: https://github.com/Parthi152005
+    // Create a comprehensive portfolio content in professional resume format
+    const portfolioContent = `PARTHIBAN S
+Data Analytics — UI|UX Designer
+Sandrorplayam, Cuddalore, Tamilnadu, India                                    +91-7418484430
+                                                                             parthi15august@gmail.com
+                                                                             parthi-ban-0910152a5
+                                                                             https://github.com/Parthi152005
 
-ABOUT
-AI & DS Student | Data Whisperer | Design Thinker 
-Blending Data + Design to build human-centered tech
-UI/UX Designer | Data Analyst in progress | AI Explorer
-Creating impact through innovation & FOSS Developer
+Summary
 
-SKILLS
-• Python
-• Figma
-• SQL
-• AI & ML
-• UI/UX Design
+Detail-oriented Data Analyst skilled in SQL, Python, Tableau, and Excel for data-driven decision-making.
+Also a budding UI/UX Designer with expertise in wireframing and user research using Figma and Adobe
+XD. Passionate about optimizing business performance and enhancing user engagement.
 
-PROJECTS
-1. Sales Forecasting using Machine Learning
-   - Analyzes historical sales data using ML algorithms
-   - Optimizes inventory management and demand planning
-   - Enhances revenue forecasting with data-driven insights
+Education                                           Certifications
 
-2. AI-based Fall Detection System for Elderly Safety
-   - Uses AI and computer vision for real-time fall detection
-   - Integrates IoT sensors to monitor movement
-   - Sends instant alerts to caregivers
+• B.Tech in AI and Data Science                   • Data Analytics Essentials
+  CK College of Engineering and Technology,         (Cisco Networking Academy)
+  Cuddalore (2022 - 2026)
+                                                  • NoSQL
+• Higher Secondary - 60%                           (NSICI)
+  St.David Higher Secondary School,
+  Cuddalore Port (2020 -2022)                    • 30-Day MasterClass in Data Analytics
+                                                    (NoviTech R&D Pvt. Ltd.)
 
-3. AI-Based Smart Integration Farming System
-   - Implements ML to predict crop health and optimize irrigation
-   - Solar-powered sensors monitor environmental conditions
-   - Enhances agricultural efficiency through automation
+Skills                                             Competitive Programming
 
-4. Deep Research AI
-   - Advanced AI research and development project
-   - Cutting-edge machine learning implementations
-   - Innovative solutions for complex data challenges
+• Programming: Python, SQL, Java,R                - Successfully tackled over 150 challenges on Hacker-
+                                                    Rank.
+• Databases: MongoDB, MySQL                        -Solved more than 100 problems on LeetCode.
 
-UPCOMING PROJECTS
-Unified Data Analytics Platform
-- Integrated application combining Python, Power BI, Tableau, R, and SQL
-- Comprehensive data analytics and visualization platform
-    `;
+• Data Analytics: Pandas, NumPy,
+  Tableau, Power BI, Matplotlib, Seaborn
+
+• Machine Learning: Scikit-Learn,TensorFlow
+
+• UI UX: Figma, Adobe XD
+
+Achievements
+
+- Dr.KALAM YOUNG ACHIEVER AWARD (Sep2024)
+
+-Achieved the National Cadet Corps (NCC) 'A'
+Certificate, demonstrating exemplary leadership, discipline, and teamwork through rigorous military training
+
+Projects
+
+• Sales Forecasting using Machine Learning
+  - Analyzes historical sales data using machine learning algorithms to predict future trends.
+  - Optimizes inventory management and demand planning for better business efficiency.
+  - Enhances revenue forecasting and decision-making with data-driven insights.
+
+• AI-based fall detection system for elderly safety
+  -Uses AI and computer vision to detect falls in real-time with high accuracy
+  -Integrates IoT sensors to monitor movement and identify sudden impacts.
+  -Sends instant alerts to caregivers for quick emergency response.
+
+• AI-Based Smart Integration Farming System
+  - Implements machine learning to predict crop health and optimize irrigation.
+  - Solar-powered sensors monitor soil moisture, temperature, and environmental conditions.
+  - Enhances agricultural efficiency by automating decision-making and resource management.`;
 
     const blob = new Blob([portfolioContent], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Parthiban_S_Portfolio.txt';
+    link.download = 'Parthiban_S_Resume.txt';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

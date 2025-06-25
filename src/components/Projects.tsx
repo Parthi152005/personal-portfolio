@@ -13,7 +13,8 @@ const Projects = () => {
       icon: <TrendingUp className="w-10 h-10" />,
       gradient: "from-blue-600 to-indigo-700",
       bgGradient: "from-blue-50 to-indigo-50",
-      emoji: "📈"
+      emoji: "📈",
+      githubUrl: "https://github.com/parthiban-s/sales-forecasting-ml"
     },
     {
       title: "AI-based Fall Detection System for Elderly Safety",
@@ -23,7 +24,8 @@ const Projects = () => {
       icon: <Shield className="w-10 h-10" />,
       gradient: "from-indigo-600 to-slate-700",
       bgGradient: "from-indigo-50 to-slate-50",
-      emoji: "🛡️"
+      emoji: "🛡️",
+      githubUrl: "https://github.com/parthiban-s/ai-fall-detection"
     },
     {
       title: "AI-Based Smart Integration Farming System",
@@ -33,7 +35,8 @@ const Projects = () => {
       icon: <Sprout className="w-10 h-10" />,
       gradient: "from-slate-600 to-blue-700",
       bgGradient: "from-slate-50 to-blue-50",
-      emoji: "🌱"
+      emoji: "🌱",
+      githubUrl: "https://github.com/parthiban-s/smart-farming-ai"
     },
     {
       title: "Deep Research AI",
@@ -43,9 +46,14 @@ const Projects = () => {
       icon: <Brain className="w-10 h-10" />,
       gradient: "from-purple-600 to-pink-700",
       bgGradient: "from-purple-50 to-pink-50",
-      emoji: "🧠"
+      emoji: "🧠",
+      githubUrl: "https://github.com/parthiban-s/deep-research-ai"
     }
   ];
+
+  const handleGithubClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   const handleGithubProfileClick = () => {
     window.open('https://github.com/parthiban-s', '_blank', 'noopener,noreferrer');
@@ -106,6 +114,15 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+
+                {/* GitHub Link */}
+                <Button 
+                  onClick={() => handleGithubClick(project.githubUrl)}
+                  className="w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-lg hover:scale-105 transition-all duration-300 font-medium shadow-md"
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  View on GitHub
+                </Button>
               </div>
             </Card>
           ))}
