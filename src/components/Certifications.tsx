@@ -6,28 +6,46 @@ import { ExternalLink, Award } from 'lucide-react';
 const Certifications = () => {
   const certifications = [
     {
+      title: "Generative AI Essentials: Using LLMs to Work with Data",
+      organization: "IBM SkillsBuild",
+      date: "Issued Jul 11, 2026",
+      icon: <Award className="w-8 h-8 text-[#2563EB]" />,
+      link: "https://www.credly.com/users/parthiban-s.69594010/badges/credly"
+    },
+    {
+      title: "Generative AI in Action",
+      organization: "IBM SkillsBuild",
+      date: "Issued Jul 11, 2026",
+      icon: <Award className="w-8 h-8 text-[#2563EB]" />,
+      link: "https://www.credly.com/users/parthiban-s.69594010/badges/credly"
+    },
+    {
+      title: "Google Cloud Data Analytics Certificate",
+      organization: "Google Cloud",
+      date: "Expires Apr 18, 2028",
+      icon: <Award className="w-8 h-8 text-[#2563EB]" />,
+      link: "https://www.credly.com/users/parthiban-s.69594010/badges/credly"
+    },
+    {
+      title: "Python for Data Science",
+      organization: "IBM",
+      date: "Issued Sep 10, 2024",
+      icon: <Award className="w-8 h-8 text-[#2563EB]" />,
+      link: "https://www.credly.com/users/parthiban-s.69594010/badges/credly"
+    },
+    {
       title: "Data Analytics Essentials",
       organization: "Cisco",
       date: "Recent",
-      icon: <Award className="w-8 h-8 text-[#2563EB]" />
+      icon: <Award className="w-8 h-8 text-[#2563EB]" />,
+      link: "https://www.credly.com/users/parthiban-s.69594010/badges/credly"
     },
     {
       title: "Data Analytics Masterclass (30 Days)",
       organization: "NoviTech R&D",
       date: "Recent",
-      icon: <Award className="w-8 h-8 text-[#2563EB]" />
-    },
-    {
-      title: "No SQL, AR and VR",
-      organization: "NSIC Technical Service Centre",
-      date: "Recent",
-      icon: <Award className="w-8 h-8 text-[#2563EB]" />
-    },
-    {
-      title: "Data Analytics Job Simulation",
-      organization: "Deloitte",
-      date: "Recent",
-      icon: <Award className="w-8 h-8 text-[#2563EB]" />
+      icon: <Award className="w-8 h-8 text-[#2563EB]" />,
+      link: "https://www.credly.com/users/parthiban-s.69594010/badges/credly"
     }
   ];
 
@@ -73,7 +91,11 @@ const Certifications = () => {
                 
                 <div className="mt-auto pt-6 flex items-center justify-between border-t border-[#374151]">
                   <span className="text-[#D1D5DB] font-inter text-sm">{cert.date}</span>
-                  <Button variant="ghost" className="text-[#F9FAFB] font-inter font-semibold hover:text-[#2563EB] hover:bg-transparent px-0">
+                  <Button 
+                    variant="ghost" 
+                    className="text-[#F9FAFB] font-inter font-semibold hover:text-[#2563EB] hover:bg-transparent px-0"
+                    onClick={() => window.open(cert.link, '_blank')}
+                  >
                     <span className="mr-2">View Certificate</span>
                     <ExternalLink className="w-4 h-4" />
                   </Button>
